@@ -1,0 +1,2 @@
+# aritmatika
+Program Kakulator Sederhana

@@ -2,8 +2,8 @@
 Program Kakulator Sederhana
 <br>
 <br>
-  $ git clone https://github.com/riandafuadshafly/aritmatika <br>
-  $ cd aritmatika <br>
-  $ sh aritmatika.sh <br>
+ - $ wget https://raw.githubusercontent.com/meicookies/aritmatika/patch-1/aritmatika.sh <br>
+ - $ chmod +x aritmatika <br>
+ - $ ./aritmatika.sh <br>
   <br>
-Thanks for use :)
+just fix bad program

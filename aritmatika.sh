@@ -1,77 +1,46 @@
 #!/bin/bash
-#version 1.0
-#wibuwangy
-#just for fun
+#version 6.9
+#wibucringe
+#just for recode
 
 #25/05/2021
 
-clear
-# Variables
-b='\E[34m'
-r='\E[31m'
-c='\E[36m'
-g='\E[32m'
-y='\E[33m'
+# i don't use all these colors,  LOL
+# use the array if u have a multiple values
+color=('\e[0m' '\e[94m' '\e[91m' '\e[96m' '\e[92m' '\e[93m')
 
-sleep 3
-clear
-echo ""
-echo -e "  [+] Author   : Rianda Fuad Shafly "
-echo -e "  [+] Info     : Aritmatika "
-echo -e "  [+] Website  : www.riandafuadshafly.my.id "
-echo -e "  [+] Contact  : bangrianda456@gmail.com "
-echo ""
-sleep 3
-read -p "  [-] Masukkan angka pertama = " a;
-read -p "  [-] Masukkan angka kedua = " b;
-echo -e ""
-echo -e $y " [-] Program Aritmatika Bash Version [-] "
-sleep 1
-echo -e ""
-echo -e $y "     [1] Perkalian "
-sleep 1
-echo -e $y "     [2] Pembagian "
-sleep 1
-echo -e $y "     [3] Perjumlahan "
-sleep 1
-echo -e $y "     [4] Pengurangan "
-sleep 2
-echo -e ""
-read -p "  [-] Pilih salah satu = " kamu;
+#Cringey banner, lmao
+banner=$(cat<<BANNER
 
-sleep 2
-case $kamu in
-1) 
-r=$(( a * b ))
-echo -e $c " Result : "
-sleep 1
-echo -e $c " $a x $b = $r "
+  Arithmetic, LMAO
 
-;;
-
-2)
-r=$(( a / b ))
-echo -e $c " Result : "
-sleep 1
-echo -e $c " $a : $b = $r "
-
-;;
-
-3)
-r=$(( a + b ))
-echo -e $c " Result : "
-sleep 1
-echo -e $c " $a + $b = $r "
-
-;;
-
-4)
-r=$(( a - b ))
-echo -e $c " Result : "
-sleep 1
-echo -e $c " $a - $b = $r "
-
-;;
-
-*) echo "Maaf, Input yang kamu masukkan salah "
+Usage: ./arithmetic.sh [option] [first num] [second num]
+Option:
+  -sum          Addition
+  -diff         Subtraction
+  -multi        Multiplication
+  -div          Division
+  -mod          Modulo
+  --help        print this fuckin help :D haha
+Example: ./arithmetic.sh -sum 10 12
+Output: 10 + 12 = 22
+BANNER
+)
+if [ -z $1 ]; then echo "$banner"; exit; fi
+case $1 in
+  # use expr for arithmetic operators
+  -sum) echo "$2 + $3 = $(expr $2 + $3)"
+  ;;
+  -diff) echo "$2 - $3 = $(expr $2 - $3)"
+  ;;
+  -multi) echo "$2 * $3 = $(expr $2 \* $3)"
+  ;;
+  -div) echo "$2 / $3 = $(expr $2 / $3)"
+  ;;
+  -mod) echo "$2 % $3 = $(expr $2 % $3)"
+  ;;
+  --help) echo "$banner" | awk '/Option/,/haha/'
+  ;;
+  *) echo -e "Invalid Option\nTry './arithmetic.sh --help' for more information"
+  ;;
 esac

@@ -12,10 +12,7 @@ color=('\e[0m' '\e[94m' '\e[91m' '\e[96m' '\e[92m' '\e[93m')
 #Cringey banner, lmao
 banner=$(cat<<BANNER
 
-  [+] Author   : Rianda Fuad Shafly "
-  [+] Info     : Aritmatika "
-  [+] Website  : www.riandafuadshafly.my.id "
-  [+] Contact  : bangrianda456@gmail.com "
+  Arithmetic, LMAO
 
 Usage: ./arithmetic.sh [option] [first num] [second num]
 Option:
